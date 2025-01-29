@@ -8,14 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-card-user\node_modules
-todo\node_modules
-.\todo\node_modules
-.\card-user\node_modules
-card-user\node_modules
-calendar\node_modules
-.\calendar\node_modules
-
 dist
 dist-ssr
 *.local
