@@ -1,3 +1,9 @@
+.container{
+width: 1000px;
+display:flex;
+flex-direction: row-reverse;
+
+}
 .calendar-container {
     width: fit-content;
     margin: auto;
@@ -61,55 +67,4 @@
     background-color: darkgreen;
   }
   
-  /* Modal */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    width: 300px;
-  }
-  
-  .modal label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .modal input, .modal select {
-    width: 100%;
-    padding: 5px;
-    margin-top: 5px;
-  }
-  
-  .modal-buttons {
-    margin-top: 15px;
-  }
-  
-  .modal-buttons button {
-    margin: 5px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .modal-buttons button:first-child {
-    background-color: blue;
-    color: white;
-  }
-  
-  .modal-buttons button:last-child {
-    background-color: red;
-    color: white;
-  }

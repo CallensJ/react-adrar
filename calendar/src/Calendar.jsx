@@ -1,5 +1,6 @@
 // import React from 'react';
 import "./calendar.css";
+import Event from "./Event";
 
 const MONTH = [
   "Janvier",
@@ -29,6 +30,9 @@ const DAY_LETTER = DAY.map((day) => day[0]); //https://stackoverflow.com/questio
 
 const Calendar = () => {
   return (
+    <>
+    <main className="container">
+
     <div className="calendar-container">
       <div className="header">{MONTH[9]} - 2025</div>
       <div className="grid">
@@ -47,6 +51,10 @@ const Calendar = () => {
         })}
       </div>
     </div>
+    <Event />
+    </main>
+    
+    </>
   );
 };
 
