@@ -29,6 +29,18 @@ const DAY_LETTER = DAY.map((day) => day[0]); //https://stackoverflow.com/questio
 // console.log(DAY_LETTER);
 
 const Calendar = () => {
+  
+  function handleSendEvent(){
+    const confirmed = window.confirm(
+      "etes vous sur de vouloir enregistrer cet evenement?"
+    );
+    if(confirmed){
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        [eventData.day]: eventData.name, // Enregistre l'événement pour ce jour
+      }));
+    }
+  }
   return (
     <>
     <main className="container">
@@ -51,7 +63,7 @@ const Calendar = () => {
         })}
       </div>
     </div>
-    <Event />
+    <Event onSendEvent={handleSendEvent}/>
     </main>
     
     </>
