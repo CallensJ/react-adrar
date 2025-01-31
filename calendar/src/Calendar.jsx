@@ -1,4 +1,5 @@
 // import React from 'react';
+import { useState } from "react";
 import "./calendar.css";
 import Event from "./Event";
 
@@ -29,8 +30,10 @@ const DAY_LETTER = DAY.map((day) => day[0]); //https://stackoverflow.com/questio
 // console.log(DAY_LETTER);
 
 const Calendar = () => {
+  const [events, setEvents] = useState({});
   
-  function handleSendEvent(){
+  function handleSendEvent(eventData){
+    console.log(eventData);
     const confirmed = window.confirm(
       "etes vous sur de vouloir enregistrer cet evenement?"
     );
@@ -55,8 +58,9 @@ const Calendar = () => {
         ))}
         {[...Array(31)].map((_, i) => {
           const day = i + 1;
+          const hasEvent = events[day]; //
           return (
-            <div key={day} className={`calendar-cell`}>
+            <div key={day} className={`calendar-cell ${hasEvent ? "event-day" : ""}`}>
               {day}
             </div>
           );

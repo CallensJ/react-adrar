@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "./event.css";
 
 
@@ -20,6 +21,8 @@ const Event = ({ onSendEvent }) => {
     function handleSubmit(e){
         e.preventDefault();
         if (!data.day || !data.name || !data.time || !data.location) return;
+        console.warn("Formulaire incomplet !");
+        onSendEvent(data); //envoie e
         console.log(data);
     }
 
@@ -29,7 +32,7 @@ const Event = ({ onSendEvent }) => {
         <h3>Ajouter un événement</h3>
         <form onSubmit={handleSubmit}>
           <label>Date :</label>
-          <select name="day" required>
+          <select name="day" value={data.day} onChange={handleInputChange} required>
             <option value="">Sélectionner un jour</option>
             {[...Array(31)].map((_, i) => (
               <option key={i + 1} value={i + 1}>
@@ -48,7 +51,7 @@ const Event = ({ onSendEvent }) => {
           <input type="text" name="location" value={data.location} onChange={handleInputChange} required />
 
           <div className="modal-buttons">
-            <button type="submit" onClick={onSendEvent}>Ajouter</button>
+            <button type="submit">Ajouter</button>
             <button type="button">Annuler</button>
           </div>
         </form>
@@ -57,4 +60,7 @@ const Event = ({ onSendEvent }) => {
   );
 };
 
+Event.propTypes = {
+  onSendEvent: PropTypes.func.isRequired, // Validation de la prop
+};
 export default Event;

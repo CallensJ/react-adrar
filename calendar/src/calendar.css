@@ -67,4 +67,8 @@ flex-direction: row-reverse;
     background-color: darkgreen;
   }
   
-  
+  .event-day {
+    background-color: #ffcc00; 
+    color: white;
+    font-weight: bold;
+  }
