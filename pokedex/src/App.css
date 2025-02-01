@@ -42,3 +42,10 @@ LOADER STYLES
     opacity: 1;
   }
 }
+
+
+
+
+.card{
+  border: 1px solid black;
+}
